@@ -1,0 +1,7 @@
+class Solution {
+    // Function to find the greatest of three numbers
+    int greatestOfThree(int A, int B, int C) {
+        // using inbuilt function to find the maximum of three numbers
+        return Math.max(A, Math.max(B, C));
+    }
+}
