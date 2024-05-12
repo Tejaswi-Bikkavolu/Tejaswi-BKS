@@ -1,0 +1,18 @@
+class Solution {
+    int isDigitSumPalindrome(int n) {
+        int newNum = 0;
+        // Finding out the digit sum
+        while (n > 0) {
+            newNum += n % 10;
+            n /= 10;
+        }
+        int reversedNewNum = 0;
+        n = newNum;
+        //
+        while (n > 0) {
+            reversedNewNum = (reversedNewNum * 10) + (n % 10);
+            n /= 10;
+        }
+        return (reversedNewNum == newNum ? 1 : 0);
+    }
+}
