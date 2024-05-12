@@ -1,0 +1,15 @@
+class Solution {
+    // Function to reverse the digits of a given number
+    public long reverse_digit(long n) {
+        long revN = 0;
+        
+        // Iteration to reverse the digits
+        while (n > 0) {
+            revN = revN * 10 + n % 10;
+            n = n / 10;
+        }
+        
+        // Returning the reversed number
+        return revN;
+    }
+}
