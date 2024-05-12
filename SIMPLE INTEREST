@@ -1,0 +1,36 @@
+#User function Template for python3
+
+class Solution:
+    def simpleInterest(principal,rate,time):
+        #calculate simple interest
+        simpleInterest=principal*rate*time/100
+        return simpleInterest
+    #for example
+    p=1000
+    
+    r=0.05
+    t=3
+    #here p,t,r represents principal amount,rate of interest,time
+    
+    #calculate simple interest
+    
+    interest=simpleInterest(p,r,t)
+    
+    #print simple interest
+    
+    print("simple interest:",interest)
+        
+    
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__=='__main__':
+    t=int(input())
+    for _ in range(t):
+        P,R,T=map(int,input().strip().split(' '))
+        ob=Solution()
+        print('%.2f'%ob.simpleInterest(P,R,T))
+# } Driver Code Ends
