@@ -1,0 +1,59 @@
+//{ Driver Code Starts
+//Initial Template for javascript
+
+'use strict';
+
+process.stdin.resume();
+process.stdin.setEncoding('utf-8');
+
+let inputString = '';
+let currentLine = 0;
+
+process.stdin.on('data', inputStdin => {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', _ => {
+    inputString = inputString.trim().split('\n').map(string => {
+        return string.trim();
+    });
+    
+    main();    
+});
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+function main() {
+    let t = parseInt(readLine());
+    let i = 0;
+    for(;i<t;i++)
+    {
+        let n = parseInt(readLine());
+        let arr = readLine().trim().split(" ").map((x) => parseInt(x));
+        let obj = new Solution();
+        let res=obj.find_median(arr);
+        console.log(res);
+    }
+}
+
+// } Driver Code Ends
+
+
+// Back-end complete function Template for javascript
+
+class Solution {
+
+    find_median(arr) {
+        arr.sort((A, B) => A-B); // Sort the array in ascending order.
+        let ans, N = arr.length; // Initialize variables to store the median and length of the array.
+        if (N % 2 == 1) {
+            ans = arr[Math.floor(N/2)]; // If the length of the array is odd, the median is the middle element.
+        } else {
+            ans = arr[Math.floor(N/2)] + arr[Math.floor(N/2)-1]; // If the length of the array is even, the median is the average of the middle two elements.
+            ans = Math.floor(ans/2); // Take the floor value of the average to get the median.
+        }
+        return ans; // Return the median of the array.
+    }
+}
